@@ -18,29 +18,20 @@ namespace TencentCloud\Cdwdoris\V20211228\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * 额外参数
+ * CheckCoolDownWorkingVariableConfigCorrect请求参数结构体
  *
- * @method string getDelShards() 获取要删除的shards
- * @method void setDelShards(string $DelShards) 设置要删除的shards
- * @method string getDelHosts() 获取要删除的节点uip
- * @method void setDelHosts(string $DelHosts) 设置要删除的节点uip
+ * @method string getInstanceId() 获取集群id
+ * @method void setInstanceId(string $InstanceId) 设置集群id
  */
-class SpecExtra extends AbstractModel
+class CheckCoolDownWorkingVariableConfigCorrectRequest extends AbstractModel
 {
     /**
-     * @var string 要删除的shards
-     * @deprecated
+     * @var string 集群id
      */
-    public $DelShards;
+    public $InstanceId;
 
     /**
-     * @var string 要删除的节点uip
-     */
-    public $DelHosts;
-
-    /**
-     * @param string $DelShards 要删除的shards
-     * @param string $DelHosts 要删除的节点uip
+     * @param string $InstanceId 集群id
      */
     function __construct()
     {
@@ -55,12 +46,8 @@ class SpecExtra extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("DelShards",$param) and $param["DelShards"] !== null) {
-            $this->DelShards = $param["DelShards"];
-        }
-
-        if (array_key_exists("DelHosts",$param) and $param["DelHosts"] !== null) {
-            $this->DelHosts = $param["DelHosts"];
+        if (array_key_exists("InstanceId",$param) and $param["InstanceId"] !== null) {
+            $this->InstanceId = $param["InstanceId"];
         }
     }
 }

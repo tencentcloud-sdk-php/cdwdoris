@@ -18,20 +18,20 @@ namespace TencentCloud\Cdwdoris\V20211228\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * DescribeDatabaseAuditResource请求参数结构体
+ * DescribeCoolDownBackends请求参数结构体
  *
- * @method string getInstanceId() 获取实例ID
- * @method void setInstanceId(string $InstanceId) 设置实例ID
+ * @method string getInstanceId() 获取集群id
+ * @method void setInstanceId(string $InstanceId) 设置集群id
  */
-class DescribeDatabaseAuditResourceRequest extends AbstractModel
+class DescribeCoolDownBackendsRequest extends AbstractModel
 {
     /**
-     * @var string 实例ID
+     * @var string 集群id
      */
     public $InstanceId;
 
     /**
-     * @param string $InstanceId 实例ID
+     * @param string $InstanceId 集群id
      */
     function __construct()
     {

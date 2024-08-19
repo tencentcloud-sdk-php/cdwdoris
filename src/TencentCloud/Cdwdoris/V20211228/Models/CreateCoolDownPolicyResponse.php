@@ -18,22 +18,22 @@ namespace TencentCloud\Cdwdoris\V20211228\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * DescribeReplicaVersion返回参数结构体
+ * CreateCoolDownPolicy返回参数结构体
  *
- * @method VersionReplicaItem getReplicaFlagItem() 获取是否支持新语法
+ * @method string getErrorMsg() 获取错误信息
 注意：此字段可能返回 null，表示取不到有效值。
- * @method void setReplicaFlagItem(VersionReplicaItem $ReplicaFlagItem) 设置是否支持新语法
+ * @method void setErrorMsg(string $ErrorMsg) 设置错误信息
 注意：此字段可能返回 null，表示取不到有效值。
  * @method string getRequestId() 获取唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。
  * @method void setRequestId(string $RequestId) 设置唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。
  */
-class DescribeReplicaVersionResponse extends AbstractModel
+class CreateCoolDownPolicyResponse extends AbstractModel
 {
     /**
-     * @var VersionReplicaItem 是否支持新语法
+     * @var string 错误信息
 注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $ReplicaFlagItem;
+    public $ErrorMsg;
 
     /**
      * @var string 唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。
@@ -41,7 +41,7 @@ class DescribeReplicaVersionResponse extends AbstractModel
     public $RequestId;
 
     /**
-     * @param VersionReplicaItem $ReplicaFlagItem 是否支持新语法
+     * @param string $ErrorMsg 错误信息
 注意：此字段可能返回 null，表示取不到有效值。
      * @param string $RequestId 唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。
      */
@@ -58,9 +58,8 @@ class DescribeReplicaVersionResponse extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("ReplicaFlagItem",$param) and $param["ReplicaFlagItem"] !== null) {
-            $this->ReplicaFlagItem = new VersionReplicaItem();
-            $this->ReplicaFlagItem->deserialize($param["ReplicaFlagItem"]);
+        if (array_key_exists("ErrorMsg",$param) and $param["ErrorMsg"] !== null) {
+            $this->ErrorMsg = $param["ErrorMsg"];
         }
 
         if (array_key_exists("RequestId",$param) and $param["RequestId"] !== null) {

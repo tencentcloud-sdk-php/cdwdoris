@@ -18,36 +18,36 @@ namespace TencentCloud\Cdwdoris\V20211228\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * FitClsLog请求参数结构体
+ * UpdateCoolDown请求参数结构体
  *
- * @method string getInstanceId() 获取集群ID，例如cdwch-xxxx
- * @method void setInstanceId(string $InstanceId) 设置集群ID，例如cdwch-xxxx
- * @method string getClsLogSetId() 获取cls日志集ID
- * @method void setClsLogSetId(string $ClsLogSetId) 设置cls日志集ID
- * @method string getLogType() 获取日志的类型，es还是cls_topic
- * @method void setLogType(string $LogType) 设置日志的类型，es还是cls_topic
+ * @method string getInstanceId() 获取集群id
+ * @method void setInstanceId(string $InstanceId) 设置集群id
+ * @method integer getEnable() 获取是否启用 0：不启用 1：启用
+ * @method void setEnable(integer $Enable) 设置是否启用 0：不启用 1：启用
+ * @method string getBucket() 获取用户存放冷热分层数据Cos桶地址
+ * @method void setBucket(string $Bucket) 设置用户存放冷热分层数据Cos桶地址
  */
-class FitClsLogRequest extends AbstractModel
+class UpdateCoolDownRequest extends AbstractModel
 {
     /**
-     * @var string 集群ID，例如cdwch-xxxx
+     * @var string 集群id
      */
     public $InstanceId;
 
     /**
-     * @var string cls日志集ID
+     * @var integer 是否启用 0：不启用 1：启用
      */
-    public $ClsLogSetId;
+    public $Enable;
 
     /**
-     * @var string 日志的类型，es还是cls_topic
+     * @var string 用户存放冷热分层数据Cos桶地址
      */
-    public $LogType;
+    public $Bucket;
 
     /**
-     * @param string $InstanceId 集群ID，例如cdwch-xxxx
-     * @param string $ClsLogSetId cls日志集ID
-     * @param string $LogType 日志的类型，es还是cls_topic
+     * @param string $InstanceId 集群id
+     * @param integer $Enable 是否启用 0：不启用 1：启用
+     * @param string $Bucket 用户存放冷热分层数据Cos桶地址
      */
     function __construct()
     {
@@ -66,12 +66,12 @@ class FitClsLogRequest extends AbstractModel
             $this->InstanceId = $param["InstanceId"];
         }
 
-        if (array_key_exists("ClsLogSetId",$param) and $param["ClsLogSetId"] !== null) {
-            $this->ClsLogSetId = $param["ClsLogSetId"];
+        if (array_key_exists("Enable",$param) and $param["Enable"] !== null) {
+            $this->Enable = $param["Enable"];
         }
 
-        if (array_key_exists("LogType",$param) and $param["LogType"] !== null) {
-            $this->LogType = $param["LogType"];
+        if (array_key_exists("Bucket",$param) and $param["Bucket"] !== null) {
+            $this->Bucket = $param["Bucket"];
         }
     }
 }

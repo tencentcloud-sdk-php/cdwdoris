@@ -18,22 +18,18 @@ namespace TencentCloud\Cdwdoris\V20211228\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * OpenBackUp请求参数结构体
+ * ModifyCoolDownPolicy请求参数结构体
  *
  * @method string getInstanceId() 获取集群id
  * @method void setInstanceId(string $InstanceId) 设置集群id
- * @method string getOperationType() 获取取值：
-open:打开
-close:关闭
-updateBucket:变更桶名
- * @method void setOperationType(string $OperationType) 设置取值：
-open:打开
-close:关闭
-updateBucket:变更桶名
- * @method string getCosBucketName() 获取桶名字
- * @method void setCosBucketName(string $CosBucketName) 设置桶名字
+ * @method string getPolicyName() 获取策略名称
+ * @method void setPolicyName(string $PolicyName) 设置策略名称
+ * @method string getCoolDownTtl() 获取cooldown_ttl
+ * @method void setCoolDownTtl(string $CoolDownTtl) 设置cooldown_ttl
+ * @method string getCoolDownDatetime() 获取cooldown_datetime
+ * @method void setCoolDownDatetime(string $CoolDownDatetime) 设置cooldown_datetime
  */
-class OpenBackUpRequest extends AbstractModel
+class ModifyCoolDownPolicyRequest extends AbstractModel
 {
     /**
      * @var string 集群id
@@ -41,25 +37,25 @@ class OpenBackUpRequest extends AbstractModel
     public $InstanceId;
 
     /**
-     * @var string 取值：
-open:打开
-close:关闭
-updateBucket:变更桶名
+     * @var string 策略名称
      */
-    public $OperationType;
+    public $PolicyName;
 
     /**
-     * @var string 桶名字
+     * @var string cooldown_ttl
      */
-    public $CosBucketName;
+    public $CoolDownTtl;
+
+    /**
+     * @var string cooldown_datetime
+     */
+    public $CoolDownDatetime;
 
     /**
      * @param string $InstanceId 集群id
-     * @param string $OperationType 取值：
-open:打开
-close:关闭
-updateBucket:变更桶名
-     * @param string $CosBucketName 桶名字
+     * @param string $PolicyName 策略名称
+     * @param string $CoolDownTtl cooldown_ttl
+     * @param string $CoolDownDatetime cooldown_datetime
      */
     function __construct()
     {
@@ -78,12 +74,16 @@ updateBucket:变更桶名
             $this->InstanceId = $param["InstanceId"];
         }
 
-        if (array_key_exists("OperationType",$param) and $param["OperationType"] !== null) {
-            $this->OperationType = $param["OperationType"];
+        if (array_key_exists("PolicyName",$param) and $param["PolicyName"] !== null) {
+            $this->PolicyName = $param["PolicyName"];
         }
 
-        if (array_key_exists("CosBucketName",$param) and $param["CosBucketName"] !== null) {
-            $this->CosBucketName = $param["CosBucketName"];
+        if (array_key_exists("CoolDownTtl",$param) and $param["CoolDownTtl"] !== null) {
+            $this->CoolDownTtl = $param["CoolDownTtl"];
+        }
+
+        if (array_key_exists("CoolDownDatetime",$param) and $param["CoolDownDatetime"] !== null) {
+            $this->CoolDownDatetime = $param["CoolDownDatetime"];
         }
     }
 }

@@ -18,20 +18,28 @@ namespace TencentCloud\Cdwdoris\V20211228\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * DescribeReplicaVersion请求参数结构体
+ * DescribeCoolDownTableData请求参数结构体
  *
- * @method string getInstanceId() 获取实例id
- * @method void setInstanceId(string $InstanceId) 设置实例id
+ * @method string getInstanceId() 获取集群id
+ * @method void setInstanceId(string $InstanceId) 设置集群id
+ * @method string getDatabaseName() 获取数据库名称
+ * @method void setDatabaseName(string $DatabaseName) 设置数据库名称
  */
-class DescribeReplicaVersionRequest extends AbstractModel
+class DescribeCoolDownTableDataRequest extends AbstractModel
 {
     /**
-     * @var string 实例id
+     * @var string 集群id
      */
     public $InstanceId;
 
     /**
-     * @param string $InstanceId 实例id
+     * @var string 数据库名称
+     */
+    public $DatabaseName;
+
+    /**
+     * @param string $InstanceId 集群id
+     * @param string $DatabaseName 数据库名称
      */
     function __construct()
     {
@@ -48,6 +56,10 @@ class DescribeReplicaVersionRequest extends AbstractModel
         }
         if (array_key_exists("InstanceId",$param) and $param["InstanceId"] !== null) {
             $this->InstanceId = $param["InstanceId"];
+        }
+
+        if (array_key_exists("DatabaseName",$param) and $param["DatabaseName"] !== null) {
+            $this->DatabaseName = $param["DatabaseName"];
         }
     }
 }

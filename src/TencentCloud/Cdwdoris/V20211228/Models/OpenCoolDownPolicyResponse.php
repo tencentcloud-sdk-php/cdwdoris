@@ -18,19 +18,35 @@ namespace TencentCloud\Cdwdoris\V20211228\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * DescribeFederationToken返回参数结构体
+ * OpenCoolDownPolicy返回参数结构体
  *
+ * @method string getErrorMsg() 获取错误信息
+ * @method void setErrorMsg(string $ErrorMsg) 设置错误信息
+ * @method string getQueryDocument() 获取返回信息
+ * @method void setQueryDocument(string $QueryDocument) 设置返回信息
  * @method string getRequestId() 获取唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。
  * @method void setRequestId(string $RequestId) 设置唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。
  */
-class DescribeFederationTokenResponse extends AbstractModel
+class OpenCoolDownPolicyResponse extends AbstractModel
 {
+    /**
+     * @var string 错误信息
+     */
+    public $ErrorMsg;
+
+    /**
+     * @var string 返回信息
+     */
+    public $QueryDocument;
+
     /**
      * @var string 唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。
      */
     public $RequestId;
 
     /**
+     * @param string $ErrorMsg 错误信息
+     * @param string $QueryDocument 返回信息
      * @param string $RequestId 唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。
      */
     function __construct()
@@ -46,6 +62,14 @@ class DescribeFederationTokenResponse extends AbstractModel
         if ($param === null) {
             return;
         }
+        if (array_key_exists("ErrorMsg",$param) and $param["ErrorMsg"] !== null) {
+            $this->ErrorMsg = $param["ErrorMsg"];
+        }
+
+        if (array_key_exists("QueryDocument",$param) and $param["QueryDocument"] !== null) {
+            $this->QueryDocument = $param["QueryDocument"];
+        }
+
         if (array_key_exists("RequestId",$param) and $param["RequestId"] !== null) {
             $this->RequestId = $param["RequestId"];
         }

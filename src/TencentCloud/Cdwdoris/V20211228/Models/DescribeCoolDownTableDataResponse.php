@@ -18,26 +18,32 @@ namespace TencentCloud\Cdwdoris\V20211228\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * DescribeDmsSqlHistory返回参数结构体
+ * DescribeCoolDownTableData返回参数结构体
  *
- * @method array getQueryNodeList() 获取集群所有的查询节点
- * @method void setQueryNodeList(array $QueryNodeList) 设置集群所有的查询节点
- * @method array getQueryStatusList() 获取集群所有的查询状态
- * @method void setQueryStatusList(array $QueryStatusList) 设置集群所有的查询状态
+ * @method string getErrorMsg() 获取错误信息
+注意：此字段可能返回 null，表示取不到有效值。
+ * @method void setErrorMsg(string $ErrorMsg) 设置错误信息
+注意：此字段可能返回 null，表示取不到有效值。
+ * @method array getList() 获取冷热分层Table数据列表
+注意：此字段可能返回 null，表示取不到有效值。
+ * @method void setList(array $List) 设置冷热分层Table数据列表
+注意：此字段可能返回 null，表示取不到有效值。
  * @method string getRequestId() 获取唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。
  * @method void setRequestId(string $RequestId) 设置唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。
  */
-class DescribeDmsSqlHistoryResponse extends AbstractModel
+class DescribeCoolDownTableDataResponse extends AbstractModel
 {
     /**
-     * @var array 集群所有的查询节点
+     * @var string 错误信息
+注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $QueryNodeList;
+    public $ErrorMsg;
 
     /**
-     * @var array 集群所有的查询状态
+     * @var array 冷热分层Table数据列表
+注意：此字段可能返回 null，表示取不到有效值。
      */
-    public $QueryStatusList;
+    public $List;
 
     /**
      * @var string 唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。
@@ -45,8 +51,10 @@ class DescribeDmsSqlHistoryResponse extends AbstractModel
     public $RequestId;
 
     /**
-     * @param array $QueryNodeList 集群所有的查询节点
-     * @param array $QueryStatusList 集群所有的查询状态
+     * @param string $ErrorMsg 错误信息
+注意：此字段可能返回 null，表示取不到有效值。
+     * @param array $List 冷热分层Table数据列表
+注意：此字段可能返回 null，表示取不到有效值。
      * @param string $RequestId 唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。
      */
     function __construct()
@@ -62,12 +70,17 @@ class DescribeDmsSqlHistoryResponse extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("QueryNodeList",$param) and $param["QueryNodeList"] !== null) {
-            $this->QueryNodeList = $param["QueryNodeList"];
+        if (array_key_exists("ErrorMsg",$param) and $param["ErrorMsg"] !== null) {
+            $this->ErrorMsg = $param["ErrorMsg"];
         }
 
-        if (array_key_exists("QueryStatusList",$param) and $param["QueryStatusList"] !== null) {
-            $this->QueryStatusList = $param["QueryStatusList"];
+        if (array_key_exists("List",$param) and $param["List"] !== null) {
+            $this->List = [];
+            foreach ($param["List"] as $key => $value){
+                $obj = new CoolDownTableDataInfo();
+                $obj->deserialize($value);
+                array_push($this->List, $obj);
+            }
         }
 
         if (array_key_exists("RequestId",$param) and $param["RequestId"] !== null) {

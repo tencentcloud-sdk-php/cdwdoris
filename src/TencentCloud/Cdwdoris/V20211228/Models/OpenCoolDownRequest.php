@@ -18,28 +18,20 @@ namespace TencentCloud\Cdwdoris\V20211228\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * 用户是否关注监控指标入参
+ * OpenCoolDown请求参数结构体
  *
- * @method integer getId() 获取唯一id
- * @method void setId(integer $Id) 设置唯一id
- * @method string getIfAttention() 获取是否关注
- * @method void setIfAttention(string $IfAttention) 设置是否关注
+ * @method string getInstanceId() 获取集群id
+ * @method void setInstanceId(string $InstanceId) 设置集群id
  */
-class ModifyMetricFileStruct extends AbstractModel
+class OpenCoolDownRequest extends AbstractModel
 {
     /**
-     * @var integer 唯一id
+     * @var string 集群id
      */
-    public $Id;
+    public $InstanceId;
 
     /**
-     * @var string 是否关注
-     */
-    public $IfAttention;
-
-    /**
-     * @param integer $Id 唯一id
-     * @param string $IfAttention 是否关注
+     * @param string $InstanceId 集群id
      */
     function __construct()
     {
@@ -54,12 +46,8 @@ class ModifyMetricFileStruct extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("Id",$param) and $param["Id"] !== null) {
-            $this->Id = $param["Id"];
-        }
-
-        if (array_key_exists("IfAttention",$param) and $param["IfAttention"] !== null) {
-            $this->IfAttention = $param["IfAttention"];
+        if (array_key_exists("InstanceId",$param) and $param["InstanceId"] !== null) {
+            $this->InstanceId = $param["InstanceId"];
         }
     }
 }

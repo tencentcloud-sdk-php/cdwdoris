@@ -18,28 +18,20 @@ namespace TencentCloud\Cdwdoris\V20211228\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * DescribeRegionZone请求参数结构体
+ * DescribeCoolDownPolicies请求参数结构体
  *
- * @method string getService() 获取服务
- * @method void setService(string $Service) 设置服务
- * @method boolean getIsInternationalSite() 获取是否是国际站
- * @method void setIsInternationalSite(boolean $IsInternationalSite) 设置是否是国际站
+ * @method string getInstanceId() 获取集群id
+ * @method void setInstanceId(string $InstanceId) 设置集群id
  */
-class DescribeRegionZoneRequest extends AbstractModel
+class DescribeCoolDownPoliciesRequest extends AbstractModel
 {
     /**
-     * @var string 服务
+     * @var string 集群id
      */
-    public $Service;
+    public $InstanceId;
 
     /**
-     * @var boolean 是否是国际站
-     */
-    public $IsInternationalSite;
-
-    /**
-     * @param string $Service 服务
-     * @param boolean $IsInternationalSite 是否是国际站
+     * @param string $InstanceId 集群id
      */
     function __construct()
     {
@@ -54,12 +46,8 @@ class DescribeRegionZoneRequest extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("Service",$param) and $param["Service"] !== null) {
-            $this->Service = $param["Service"];
-        }
-
-        if (array_key_exists("IsInternationalSite",$param) and $param["IsInternationalSite"] !== null) {
-            $this->IsInternationalSite = $param["IsInternationalSite"];
+        if (array_key_exists("InstanceId",$param) and $param["InstanceId"] !== null) {
+            $this->InstanceId = $param["InstanceId"];
         }
     }
 }
